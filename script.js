@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/verfikasi"; // endpoint backend
+const API_URL = "https://railwaybkpsdmbuton-production.up.railway.app/"; // endpoint backend
 
 // cek apakah script.js terkoneksi
 console.log("script.js berhasil terkoneksi!");
@@ -34,3 +34,4 @@ document.getElementById("verifikasiForm").addEventListener("submit", async (e) =
     document.getElementById("hasil").innerHTML = `<p style="color:red;">Server tidak bisa dihubungi.</p>`;
   }
 });
+
