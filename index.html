@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistem Verifikasi Dokumen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9; /* warna polos abu-abu muda */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 420px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #0066cc;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #004c99;
+    }
+
+    #hasil {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .success {
+      background: #e0f7e9;
+      color: #2e7d32;
+      border: 1px solid #2e7d32;
+    }
+
+    .error {
+      background: #fdecea;
+      color: #c62828;
+      border: 1px solid #c62828;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Kabupaten Buton -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Lambang_Kabupaten_Buton.png" alt="Logo Kabupaten Buton" class="logo">
+    
+    <h1>Verifikasi Dokumen</h1>
+    <form id="verifikasiForm">
+      <label for="nomorSurat">Nomor Surat:</label>
+      <input type="text" id="nomorSurat" required>
+
+      <label for="namaPegawai">Nama Pegawai:</label>
+      <input type="text" id="namaPegawai" required>
+
+      <button type="submit">Verifikasi</button>
+    </form>
+
+    <div id="hasil"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
