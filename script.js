@@ -1,5 +1,6 @@
 const form = document.getElementById('verifikasiForm');
 const hasilDiv = document.getElementById('hasil');
+
 // Ganti dengan URL Railway backend Anda
 const API_URL = "https://railwaybkpsdmbuton-production.up.railway.app/api/verfikasi";
 
@@ -58,13 +59,3 @@ form.addEventListener('submit', async (e) => {
     `;
   }
 });
-
-
-0 commit comments
-Comments
-0
- (0)
-Comment
-You're not receiving notifications from this thread.
-
-Update script.js · fathar32/verifbkpsdmbuton09@45f4f36 
