@@ -1,4 +1,4 @@
-const API_URL = "railwaybkpsdmbuton-production.up.railway.app";
+const API_URL = "https://railwaybkpsdmbuton-production.up.railway.app";
 
 document.getElementById("verifikasiForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -28,3 +28,4 @@ document.getElementById("verifikasiForm").addEventListener("submit", async (e) =
     document.getElementById("hasil").innerText = "Gagal menghubungi server.";
   }
 });
+
