@@ -1,39 +1,30 @@
-const API_URL = "https://railwaybkpsdmbuton-production.up.railway.app/"; // endpoint backend
-
-// cek apakah script.js terkoneksi
-console.log("script.js berhasil terkoneksi!");
+const API_URL = "railwaybkpsdmbuton-production.up.railway.app";
 
 document.getElementById("verifikasiForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const nomorSurat = document.getElementById("nomorSurat").value.trim();
-  const namaPegawai = document.getElementById("namaPegawai").value.trim();
+  const nomorSurat = document.getElementById("nomorSurat").value;
+  const namaPegawai = document.getElementById("namaPegawai").value;
 
   try {
-    const response = await fetch(API_URL, {
+    const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nomorSurat, namaPegawai })
     });
 
-    const result = await response.json();
+    const data = await res.json();
 
-    const hasilDiv = document.getElementById("hasil");
-    if (result.verified) {
-      hasilDiv.innerHTML = `
-        <p style="color:green;">✅ ${result.message}</p>
-        <p>Nomor Surat: ${result.data.nomorSurat}</p>
-        <p>Nama Pegawai: ${result.data.namaPegawai}</p>
-        <p>NIP: ${result.data.nip}</p>
-      `;
+    if (data.verified) {
+      document.getElementById("hasil").className = "success";
+      document.getElementById("hasil").innerText = data.message;
     } else {
-      hasilDiv.innerHTML = `<p style="color:red;">❌ ${result.message}</p>`;
+      document.getElementById("hasil").className = "error";
+      document.getElementById("hasil").innerText = data.message;
     }
   } catch (err) {
-    console.error("Error:", err);
-    document.getElementById("hasil").innerHTML = `<p style="color:red;">Server tidak bisa dihubungi.</p>`;
+    console.error(err);
+    document.getElementById("hasil").className = "error";
+    document.getElementById("hasil").innerText = "Gagal menghubungi server.";
   }
 });
-
-
-
