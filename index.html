@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <title>Sistem Verifikasi Dokumen</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f9; /* warna polos abu-abu muda */
+      background: #f4f4f9;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     .container {
@@ -20,7 +20,7 @@
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      width: 420px;
+      width: 480px;
       text-align: center;
     }
 
@@ -66,21 +66,36 @@
 
     #hasil {
       margin-top: 20px;
-      padding: 15px;
-      border-radius: 8px;
       font-size: 14px;
     }
 
-    .success {
+    .card {
+      text-align: left;
       background: #e0f7e9;
-      color: #2e7d32;
       border: 1px solid #2e7d32;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 15px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2e7d32;
     }
 
     .error {
       background: #fdecea;
       color: #c62828;
       border: 1px solid #c62828;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -103,6 +118,7 @@
     <div id="hasil"></div>
   </div>
 
+  <!-- Hubungkan ke script.js -->
   <script src="script.js"></script>
 </body>
 </html>
