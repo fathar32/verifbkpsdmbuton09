@@ -23,15 +23,10 @@ form.addEventListener('submit', async (e) => {
     if (data.verified) {
       hasilDiv.innerHTML = `
         <div class="card">
-          <h3>✅ Dokumen Terverifikasi</h3>
-          <p><strong>Nomor Surat:</strong> ${data.data.nomor_surat}</p>
-          <p><strong>Tanggal Surat:</strong> ${data.data.tanggal_surat || '-'}</p>
-          <p><strong>Perihal:</strong> ${data.data.perihal || '-'}</p>
-          <hr>
-          <p><strong>Nama Pegawai:</strong> ${data.data.nama_pegawai}</p>
-          <p><strong>NIP:</strong> ${data.data.nip || '-'}</p>
-          <p><strong>Jabatan:</strong> ${data.data.jabatan || '-'}</p>
-          <p><strong>Unit Kerja:</strong> ${data.data.unit_kerja || '-'}</p>
+          <p style="color:green;">✅ ${result.message}</p>
+          <p>Nomor Surat: ${result.data.nomorSurat}</p>
+          <p>Nama Pegawai: ${result.data.namaPegawai}</p>
+          <p>NIP: ${result.data.nip}</p>
         </div>
       `;
     } else {
@@ -46,6 +41,7 @@ form.addEventListener('submit', async (e) => {
     `;
   }
 });
+
 
 
 
